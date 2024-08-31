@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Best Frame</title>
+</head>
+<body>
+<h1>Best Frame</h1>
+<form action="{% url 'process_video' %}" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    <div>
+        <label for="video_url">Enter Video URL:</label>
+        <input id="video_url" name="video_url" placeholder="http://example.com/video.mp4" type="url">
+    </div>
+    <br>
+    <div>
+        <label for="video_file">OR Upload Video File:</label>
+        <input id="video_file" name="video_file" type="file">
+    </div>
+    <br>
+    <button type="submit">Process Video</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Audio or Video</title>
+</head>
+<body>
+<h1>Upload Your File</h1>
+<form enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    <input name="file" type="file">
+    <br><br>
+    <input type="text" name="audio_link" placeholder="Enter audio link (optional)">
+    <br><br>
+    <input type="submit" value="Upload">
+</form>
+</body>
+</html>

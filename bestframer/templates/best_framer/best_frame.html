@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Best Frame</title>
+</head>
+<body>
+<h1>Best Frame</h1>
+{% if best_frame %}
+    <p>Best frame extracted from: {% if video_url %}{{ video_url }}{% else %}{{ video_file.name }}{% endif %}</p>
+    <img style="height:100px ; width:100px;" alt="Best Frame" src="{% url 'download_image' filename=best_frame %}"><br>
+    <a href="{% url 'download_image' filename=best_frame %}" download>Download Best Frame</a>
+{% endif %}
+</body>
+</html>

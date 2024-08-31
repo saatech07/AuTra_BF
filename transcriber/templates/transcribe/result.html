@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transcription Results</title>
+</head>
+<body>
+<h1>Transcription Results</h1>
+
+{% if audio_file_path %}
+<h2>Audio File</h2>
+
+<a href="{% url 'download_audio' base_name=audio_file_path.base_name %}">
+    Download {{ audio_file_path.base_name }}.wav
+</a>
+
+{% else %}
+<p>No audio file selected.</p>
+{% endif %}
+{% if text_file_path %}
+<h2>Text File</h2>
+
+<a href="{% url 'download_text' base_name=text_file_path.base_name %}">
+    Download {{ text_file_path.base_name }}.txt
+</a>
+
+{% else %}
+<p>No audio file selected.</p>
+{% endif %}
+</body>
+</html>
+
